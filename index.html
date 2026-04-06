@@ -34,12 +34,19 @@
 
         /* Header */
         header {
-            background: var(--white);
-            border-bottom: 3px solid var(--primary);
+            background: var(--secondary);  /* Black */
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+        }
+
+        .logo-text, nav a, .cta-button {
+            color: var(--white);
+        }
+
+        .cta-button {
+            background: var(--primary);  /* Green */
         }
 
         .logo {
