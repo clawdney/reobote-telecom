@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0066CC;
-            --primary-dark: #004499;
-            --secondary: #FF6B35;
+            --primary: #FF0000;      /* Red */
+            --primary-dark: #CC0000; /* Dark Red */
+            --secondary: #000000;   /* Black */
             --dark: #1a1a2e;
-            --light: #f8f9fa;
-            --gray: #6c757d;
+            --light: #f5f5f5;
+            --gray: #666666;
             --white: #ffffff;
         }
 
@@ -35,11 +35,34 @@
         /* Header */
         header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--primary);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-text .reobote {
+            color: var(--primary);
+        }
+
+        .logo-text .telecom {
+            color: var(--secondary);
         }
 
         .header-content {
@@ -93,10 +116,17 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920') center/cover;
             color: var(--white);
             padding: 8rem 2rem 4rem;
             text-align: center;
+        }
+
+        .hero-overlay {
+            background: rgba(0,0,0,0.6);
+            padding: 3rem;
+            border-radius: 12px;
+            display: inline-block;
         }
 
         .hero-content {
@@ -331,7 +361,9 @@
 <body>
     <header>
         <div class="header-content">
-            <div class="logo">Reobote<span>Telecom</span></div>
+            <div class="logo">
+                <img src="images/logo.svg" alt="Reobote Telecom">
+            </div>
             <nav>
                 <a href="#servicos">Serviços</a>
                 <a href="#sobre">Sobre</a>
@@ -343,12 +375,14 @@
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-location">
-                📍 Cachoeiro de Itapemirim, ES - Brasil
+            <div class="hero-overlay">
+                <div class="hero-location">
+                    📍 Cachoeiro de Itapemirim, ES - Brasil
+                </div>
+                <h1>Especialistas em Cabeamentos Telefônicos e Fibra Óptica</h1>
+                <p>Serviços profissionais de remoção de cabeamentos e instalação de fibra óptica com qualidade e segurança.</p>
+                <a href="#contato" class="cta-button" style="background: var(--white); color: var(--primary);">Solicitar Orçamento</a>
             </div>
-            <h1>Especialistas em Cabeamentos Telefônicos e Fibra Óptica</h1>
-            <p>Serviços profissionais de remoção de cabeamentos e instalação de fibra óptica com qualidade e segurança.</p>
-            <a href="#contato" class="cta-button" style="background: var(--white); color: var(--primary);">Solicitar Orçamento</a>
         </div>
     </section>
 
